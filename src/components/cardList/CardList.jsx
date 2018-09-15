@@ -6,16 +6,22 @@ class CardList extends Component {
     
     render() {
         
-        
+        const {cards} = this.props
+
+        const cardListView = cards.map((card,idx) => (
+            <Card key={idx} img={card.imageUrl} />
+        ))
+     
+
         return (
-            <div>This is the cards list view</div>
+            <div>{cardListView}</div>
         );
     }
 }
 
 
 const mapStateToProps = state => ({
-    cards: state.cards
+    cards: state.cards.cards
 })
 
 export default connect(mapStateToProps, null)(CardList);
