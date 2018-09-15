@@ -3,16 +3,25 @@ import React, {Component} from "react"
 import Card from './Card'
 
 class CardList extends Component {
+    constructor(props){
+        super(props)
+
+        this.changeCard = this.changeCard.bind(this)
+    }
+
+    changeCard(e){
+        console.log("hello")
+        console.log(e.target)
+    }
     
     render() {
         
         const {cards} = this.props
 
         const cardListView = cards.map((card,idx) => (
-            <Card key={idx} img={card.imageUrl} />
+            <Card onClick={this.changeCard} key={idx} img={card.imageUrl} />
         ))
      
-
         return (
             <div>{cardListView}</div>
         );
