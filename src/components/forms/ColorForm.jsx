@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
-import {getCards} from '../../apiRoutes/mtgFilter'
+import {getCards} from '../../actions/mtgFilter'
+import {connect} from 'react-redux'
+// import {withRouter} from 'react-router-dom'
 
 class ColorForm extends Component {
 
@@ -30,13 +32,11 @@ class ColorForm extends Component {
                 colors.push(key);
             }
         });
-
-        let cardRes = getCards(colors)    
+        this.props.getCards(colors).then((res) => this.props.history.push("/deck"))
 
     }
 
     render(){
-        console.log(this.state);
         return(
             <div>
                 <form onSubmit={this.onSubmit}>
@@ -67,4 +67,6 @@ class ColorForm extends Component {
     }
 }
 
-export default ColorForm
+const mapStateToProps = state => ({cards: state.cards});
+
+export default connect(mapStateToProps, {getCards})(ColorForm);
