@@ -4,7 +4,7 @@ const Card = ({img}) => {
     
     return(
         <div>
-            This is a card
+            <img src={img} />
         </div>
     )
 }
