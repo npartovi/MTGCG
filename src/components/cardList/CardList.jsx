@@ -5,11 +5,6 @@ import Card from './Card'
 class CardList extends Component {
     
     render() {
-<<<<<<< HEAD
-        console.log(this.props.cards);
-
-        
-=======
         
         const {cards} = this.props
 
@@ -18,7 +13,6 @@ class CardList extends Component {
         ))
      
 
->>>>>>> 48bf1421ce4b731b1acada1bb3c80cb74359051c
         return (
             <div>{cardListView}</div>
         );
