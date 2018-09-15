@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import mtg from "mtgsdk"
 import {getCards} from '../../apiRoutes/mtgFilter'
 
 class ColorForm extends Component {
@@ -32,7 +31,7 @@ class ColorForm extends Component {
             }
         });
 
-        getCards(colors)
+        let cardRes = getCards(colors)    
 
     }
 
