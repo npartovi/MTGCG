@@ -1,6 +1,8 @@
 import mtg from "mtgsdk"
+import axios from 'axios'
 import {
-    GET_ALL_CARDS
+    GET_ALL_CARDS,
+    GET_CARD
 } from "./types"
 
 
@@ -17,3 +19,11 @@ export const getCards = (colors) => (dispatch) => {
         })
 
 }
+
+export const getRandomCard = (color) => dispatch => {
+
+    axios
+        .get("https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&colors=black")
+        .then(res => console.log(res.data))
+}
+
