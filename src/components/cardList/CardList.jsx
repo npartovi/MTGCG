@@ -5,7 +5,8 @@ import Card from './Card'
 class CardList extends Component {
     
     render() {
-        
+        console.log(this.props.cards);
+
         
         return (
             <div>This is the cards list view</div>
