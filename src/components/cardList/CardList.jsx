@@ -1,6 +1,7 @@
 import {connect} from "react-redux" 
 import React, {Component} from "react"
 import Card from './Card'
+import {getRandomCard} from '../../actions/mtgFilter'
 
 class CardList extends Component {
     constructor(props){
@@ -10,8 +11,8 @@ class CardList extends Component {
     }
 
     changeCard(e){
-        console.log("hello")
         console.log(e.target)
+        // this.props.getRandomCard()
     }
     
     render() {
@@ -19,11 +20,11 @@ class CardList extends Component {
         const {cards} = this.props
 
         const cardListView = cards.map((card,idx) => (
-            <Card onClick={this.changeCard} key={idx} img={card.imageUrl} />
+            <Card onClick={this.changeCard}  key={idx} img={card.imageUrl} colorIdentity={card.colorIdentity} />
         ))
      
         return (
-            <div>{cardListView}</div>
+            <div >{cardListView}</div>
         );
     }
 }
@@ -33,4 +34,4 @@ const mapStateToProps = state => ({
     cards: state.cards.cards
 })
 
-export default connect(mapStateToProps, null)(CardList);
+export default connect(mapStateToProps, {getRandomCard})(CardList);
