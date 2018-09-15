@@ -19,12 +19,10 @@ class CardList extends Component {
         const {cards} = this.props
 
         const cardListView = cards.map((card,idx) => (
-            <Card onClick={this.changeCard} key={idx} img={card.imageUrl} />
+            <Card key={idx} img={card.imageUrl} />
         ))
      
-        return (
-            <div>{cardListView}</div>
-        );
+        return <div onClick={this.changeCard}>{cardListView}</div>;
     }
 }
 
