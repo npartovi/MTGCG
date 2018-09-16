@@ -31,7 +31,6 @@ export const getRandomCard = (colors, idx) => dispatch => {
     axios
         .get(`https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&colors=${colors}`)
         .then(res => {
-            console.log(res.data)
             dispatch({
                 type: GET_CARD,
                 payload: {
