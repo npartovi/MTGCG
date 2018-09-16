@@ -6,22 +6,12 @@ import Card from './Card'
 class CardList extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            cards: []
-        }
-    }
 
-    componentDidMount() {
-        this.setState({cards: this.props.cards});
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({cards: nextProps.cards});
     }
 
     render() {
         
-        const {cards} = this.state;
+        const {cards} = this.props;
 
         const cardListView = cards.map((card,idx) => (
             <Card key={idx} card={card} index={idx}/>
