@@ -12,9 +12,7 @@ const cardReducer = (state = initialState, action) => {
         case GET_ALL_CARDS:
             return {...state, cards: action.payload};
         case GET_CARD:
-            let newState = {...state};
-            newState.cards[action.payload.idx] = action.payload.card;
-            return {...state, newState}
+            return {...state, cards: state.cards[action.payload.idx] = action.payload.card}
         default:
             return state;
     }
