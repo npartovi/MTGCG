@@ -64,7 +64,7 @@ class ColorForm extends Component {
                     <button type="submit">Generate Cards</button>
                 </form>
             </div>
-        )
+        );
     }
 }
 
