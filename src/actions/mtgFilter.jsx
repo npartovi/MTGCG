@@ -1,27 +1,20 @@
-import mtg from "mtgsdk"
-import axios from 'axios'
+import mtg from "mtgsdk";
+import axios from 'axios';
 import {
     GET_ALL_CARDS,
     GET_CARD,
     SET_COLORS
-} from "./types"
-
-
-let obj = {
-    "G": ""
-};
-
+} from "./types";
 
 export const getCards = (colors) => (dispatch) => {
 
     let colorString = colors.join(",");
-
-    return mtg.card.where({ colors: colorString })
+    return mtg.card.where({ colors: colorString, contains: "imageUrl" })
         .then(cards => {
             dispatch({
                 type: GET_ALL_CARDS,
                 payload: cards, 
-                colors: colorString                
+                colors: colorString,
             });
         });
 

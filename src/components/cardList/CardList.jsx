@@ -9,15 +9,11 @@ class CardList extends Component {
 
     }
 
-    render() {
-        
+    render() {        
         const {cards} = this.props;
-
         const cardListView = cards.map((card,idx) => (
             <Card key={idx} card={card} index={idx}/>
         ))
-
-     
         return (
             <div onClick={this.changeCard}>{cardListView}</div>
         );
@@ -26,7 +22,7 @@ class CardList extends Component {
 
 
 const mapStateToProps = state => ({
-    cards: state.cards.cards
+    cards: state.cards
 })
 
 export default connect(mapStateToProps, null)(CardList);
