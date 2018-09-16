@@ -1,12 +1,33 @@
-import React from 'react'
+import React, {Component} from 'react'
+import { getRandomCard } from '../../actions/mtgFilter'
+import {connect} from 'react-redux'
 
-const Card = ({img}) => {
+
+class Card extends Component {
+
+    constructor(props) {
+        super(props);
+        this.changeCard = this.changeCard.bind(this);
+    }
+
+    changeCard(e) {
+        this.props.getRandomCard(this.props.colors, this.props.index);
+    }
     
-    return(
-        <div>
-            <img src={img} />
-        </div>
-    )
+    render() {
+        const {imageUrl} = this.props.card;
+
+        return(
+            <div onClick={this.changeCard}>
+                <img src={imageUrl} />
+            </div>
+        )
+    }
 }
 
-export default Card
+const mapStatetoProps = state => ({
+    colors: state.colors
+});
+
+
+export default connect(mapStatetoProps, { getRandomCard })(Card)

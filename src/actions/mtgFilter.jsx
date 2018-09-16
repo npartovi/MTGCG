@@ -2,8 +2,14 @@ import mtg from "mtgsdk"
 import axios from 'axios'
 import {
     GET_ALL_CARDS,
-    GET_CARD
+    GET_CARD,
+    SET_COLORS
 } from "./types"
+
+
+let obj = {
+    "G": ""
+}
 
 
 export const getCards = (colors) => (dispatch) => {
@@ -14,16 +20,24 @@ export const getCards = (colors) => (dispatch) => {
         .then(cards => {
             dispatch({
                 type: GET_ALL_CARDS,
-                payload: cards                
+                payload: cards, 
+                colors: colorString                
             })
         })
 
 }
 
-export const getRandomCard = (color) => dispatch => {
-
+export const getRandomCard = (colors, idx) => dispatch => {
     axios
-        .get("https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&colors=black")
-        .then(res => console.log(res.data))
+        .get(`https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&colors=${colors}`)
+        .then(res => {
+            console.log(res.data)
+            dispatch({
+                type: GET_CARD,
+                payload: {
+                    card: res.data.cards[0],
+                    idx
+                }
+            })
+        })
 }
-

@@ -32,7 +32,8 @@ class ColorForm extends Component {
                 colors.push(key);
             }
         });
-        this.props.getCards(colors).then((res) => this.props.history.push("/deck"))
+        this.props.getCards(colors)
+            .then((res) => this.props.history.push("/deck"))
 
     }
 
