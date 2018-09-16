@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {getCards} from '../../actions/mtgFilter'
-import {connect} from 'react-redux'
+import React, {Component} from 'react';
+import {getCards} from '../../actions/mtgFilter';
+import {connect} from 'react-redux';
 // import {withRouter} from 'react-router-dom'
 
 class ColorForm extends Component {
@@ -33,7 +33,7 @@ class ColorForm extends Component {
             }
         });
         this.props.getCards(colors)
-            .then((res) => this.props.history.push("/deck"))
+            .then((res) => this.props.history.push("/deck"));
 
     }
 

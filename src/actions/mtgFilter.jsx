@@ -9,7 +9,7 @@ import {
 
 let obj = {
     "G": ""
-}
+};
 
 
 export const getCards = (colors) => (dispatch) => {
@@ -22,21 +22,22 @@ export const getCards = (colors) => (dispatch) => {
                 type: GET_ALL_CARDS,
                 payload: cards, 
                 colors: colorString                
-            })
-        })
+            });
+        });
 
-}
+};
 
 export const getRandomCard = (colors, idx) => dispatch => {
     axios
         .get(`https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&colors=${colors}`)
         .then(res => {
+            console.log(res);
             dispatch({
                 type: GET_CARD,
                 payload: {
                     card: res.data.cards[0],
                     idx
                 }
-            })
-        })
-}
+            });
+        });
+};
