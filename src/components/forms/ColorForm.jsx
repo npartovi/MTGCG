@@ -32,8 +32,6 @@ class ColorForm extends Component {
             }
         });
         this.props.getCards(colors)
-            .then((res) => this.props.history.push("/deck"));
-
     }
 
     render(){
@@ -44,7 +42,7 @@ class ColorForm extends Component {
                     <div className={classnames('mana-button black', {'checked glow-black' : this.state.black})} name="black" ></div>
                     <div className={classnames('mana-button red', {'checked glow-red' : this.state.red})} name="red" ></div>
                     <div className={classnames('mana-button green', {'checked glow-green' : this.state.green})} name="green" ></div>
-                    <button onClick={this.onClick} type="submit">Generate Cards</button>
+                    <button className="generate-button" onClick={this.onClick} type="submit">Generate Cards</button>
             </div>
         );
     }
