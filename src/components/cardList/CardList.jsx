@@ -15,7 +15,9 @@ class CardList extends Component {
             <Card key={idx} card={card} index={idx}/>
         ))
         return (
-            <div onClick={this.changeCard}>{cardListView}</div>
+            <div className="card-list-container" onClick={this.changeCard}>
+                {cardListView}
+            </div>
         );
     }
 }

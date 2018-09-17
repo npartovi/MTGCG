@@ -13,7 +13,9 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Route path="/" component={ColorForm} />
+            <div className="side-bar">
+              <Route path="/" component={ColorForm} />
+            </div>
             <Route path="/deck" component={CardList} />
           </div>
         </Router>

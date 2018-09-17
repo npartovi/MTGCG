@@ -39,7 +39,7 @@ class ColorForm extends Component {
 
     render(){
         return(
-            <div>
+            <div className="card-color-container">
                 <form onSubmit={this.onSubmit}>
                     <label>
                         Red
