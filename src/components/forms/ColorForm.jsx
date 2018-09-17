@@ -39,11 +39,11 @@ class ColorForm extends Component {
     render(){
         return(
             <div onClick={this.onChange} className="card-color-container">
-                    <div className={classnames("mana-button white",{"checked" : this.state.white})} name="white" ></div>
-                    <div className={classnames('mana-button blue',{'checked' : this.state.blue})} name="blue" ></div>
-                    <div className={classnames('mana-button black', {'checked' : this.state.black})} name="black" ></div>
-                    <div className={classnames('mana-button red', {'checked' : this.state.red})} name="red" ></div>
-                    <div className={classnames('mana-button green', {'checked' : this.state.green})} name="green" ></div>
+                    <div className={classnames("mana-button white",{"checked glow-white" : this.state.white})} name="white" ></div>
+                    <div className={classnames('mana-button blue',{'checked glow-blue' : this.state.blue})} name="blue" ></div>
+                    <div className={classnames('mana-button black', {'checked glow-black' : this.state.black})} name="black" ></div>
+                    <div className={classnames('mana-button red', {'checked glow-red' : this.state.red})} name="red" ></div>
+                    <div className={classnames('mana-button green', {'checked glow-green' : this.state.green})} name="green" ></div>
                     <button onClick={this.onClick} type="submit">Generate Cards</button>
             </div>
         );

@@ -18,7 +18,7 @@ class Card extends Component {
         const {imageUrl} = this.props.card;
 
         return(
-            <div onClick={this.changeCard}>
+            <div className="card-item" onClick={this.changeCard}>
                 <img alt="" src={imageUrl} />
             </div>
         )
