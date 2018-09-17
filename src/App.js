@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import ColorForm from './components/forms/ColorForm';
-import CardList from './components//cardList/CardList';
+import Layout from './components/layout/Layout'
 import './App.css';
 
 import store from './store';
@@ -13,10 +12,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <div className="side-bar">
-              <Route path="/" component={ColorForm} />
-            </div>
-            <Route path="/" component={CardList} />
+              <Route path="/" component={Layout} />
           </div>
         </Router>
       </Provider>

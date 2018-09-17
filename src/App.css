@@ -1,19 +1,15 @@
-.App {
-  display: flex;
-  flex-direction: row;
-}
-
 .card-list-container {
   flex: 5;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .side-bar {
-  flex: 2;
+  flex: 3;
   background: black;
   height: 100vh;
+  position: fixed;
 }
 
 
