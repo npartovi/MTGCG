@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {getCards} from '../../actions/mtgFilter';
 import {connect} from 'react-redux';
-// import {withRouter} from 'react-router-dom'
 
 class ColorForm extends Component {
 
@@ -16,16 +15,15 @@ class ColorForm extends Component {
             black: false
         };
         this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onClick = this.onClick.bind(this);
     }
 
     onChange(e) {
-        let currVal = this.state[e.target.value];
-        this.setState({[e.target.value]: !currVal});
+        let currVal = this.state[e.target.getAttribute('name')];
+        this.setState({[e.target.getAttribute('name')]: !currVal});
     }
 
-    onSubmit(e) {
-        e.preventDefault();
+    onClick(e) {
         let colors = [];
         Object.keys(this.state).forEach((key) => {
             if (this.state[key]) {
@@ -39,30 +37,13 @@ class ColorForm extends Component {
 
     render(){
         return(
-            <div className="card-color-container">
-                <form onSubmit={this.onSubmit}>
-                    <label>
-                        Red
-                        <input onChange={this.onChange} type="checkbox" value="red"></input>
-                    </label>
-                    <label>
-                        Blue
-                        <input onChange={this.onChange} type="checkbox" value="blue"></input>
-                    </label>
-                    <label>
-                        White
-                        <input onChange={this.onChange} type="checkbox" value="white"></input>
-                    </label>
-                    <label>
-                        Black
-                        <input onChange={this.onChange} type="checkbox" value="black"></input>
-                    </label>
-                    <label>
-                        Green
-                        <input onChange={this.onChange} type="checkbox" value="green"></input>
-                    </label>
-                    <button type="submit">Generate Cards</button>
-                </form>
+            <div onClick={this.onChange} className="card-color-container">
+                    <div className="mana-button white" name="white" ></div>
+                    <div className="mana-button blue" name="blue" ></div>
+                    <div className="mana-button black" name="black" ></div>
+                    <div className="mana-button red" name="red" ></div>
+                    <div className="mana-button green" name="green" ></div>
+                    <button onClick={this.onClick} type="submit">Generate Cards</button>
             </div>
         );
     }

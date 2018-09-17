@@ -12,3 +12,35 @@
 .side-bar {
   flex: 2;
 }
+
+/* Mana Buttons CSS */
+.white {
+  background-image: url('./images/white_mana.png');
+  background-size: cover;
+}
+
+.black {
+  background-image: url('./images/black_mana.png');
+  background-size: cover;
+}
+
+.blue {
+  background-image: url('./images/blue_mana.png');
+  background-size: cover;
+}
+
+.red {
+  background-image: url('./images/red_mana.png');
+  background-size: cover;
+}
+
+.green {
+  background-image: url('./images/green_mana.png');
+  background-size: cover;
+}
+
+.mana-button {
+  height:100px;
+  width: 100px;
+  cursor: pointer;
+}
