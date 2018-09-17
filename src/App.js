@@ -16,7 +16,7 @@ class App extends Component {
             <div className="side-bar">
               <Route path="/" component={ColorForm} />
             </div>
-            <Route path="/deck" component={CardList} />
+            <Route path="/" component={CardList} />
           </div>
         </Router>
       </Provider>

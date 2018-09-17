@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {getCards} from '../../actions/mtgFilter';
 import {connect} from 'react-redux';
+import classnames from 'classnames'
 
 class ColorForm extends Component {
 
@@ -38,11 +39,11 @@ class ColorForm extends Component {
     render(){
         return(
             <div onClick={this.onChange} className="card-color-container">
-                    <div className="mana-button white" name="white" ></div>
-                    <div className="mana-button blue" name="blue" ></div>
-                    <div className="mana-button black" name="black" ></div>
-                    <div className="mana-button red" name="red" ></div>
-                    <div className="mana-button green" name="green" ></div>
+                    <div className={classnames("mana-button white",{"checked" : this.state.white})} name="white" ></div>
+                    <div className={classnames('mana-button blue',{'checked' : this.state.blue})} name="blue" ></div>
+                    <div className={classnames('mana-button black', {'checked' : this.state.black})} name="black" ></div>
+                    <div className={classnames('mana-button red', {'checked' : this.state.red})} name="red" ></div>
+                    <div className={classnames('mana-button green', {'checked' : this.state.green})} name="green" ></div>
                     <button onClick={this.onClick} type="submit">Generate Cards</button>
             </div>
         );
