@@ -16,6 +16,12 @@
   margin-left: 200px;
 }
 
+.layout-container {
+  background-image: url('./images/wood_background.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
 
 /* Mana Buttons CSS */
 .white {
