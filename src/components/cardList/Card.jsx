@@ -19,7 +19,7 @@ class Card extends Component {
 
         return(
             <div onClick={this.changeCard}>
-                <img src={imageUrl} />
+                <img alt="" src={imageUrl} />
             </div>
         )
     }

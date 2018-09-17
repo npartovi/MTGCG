@@ -4,11 +4,7 @@ import Card from './Card'
 
 
 class CardList extends Component {
-    constructor(props){
-        super(props);
-
-    }
-
+   
     render() {        
         const {cards} = this.props;
         const cardListView = cards.map((card,idx) => (

@@ -3,7 +3,6 @@ import axios from 'axios';
 import {
     GET_ALL_CARDS,
     GET_CARD,
-    SET_COLORS
 } from "./types";
 
 export const getCards = (colors) => (dispatch) => {
