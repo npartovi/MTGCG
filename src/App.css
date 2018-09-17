@@ -6,10 +6,14 @@
 }
 
 .side-bar {
-  flex: 3;
   background: black;
-  height: 100vh;
+  height: 100%;
+  width: 200px;
   position: fixed;
+}
+
+.main-content {
+  margin-left: 200px;
 }
 
 
