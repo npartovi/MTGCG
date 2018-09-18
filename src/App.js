@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Layout from './components/layout/Layout'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Layout from './components/layout/Layout';
 import './App.css';
 
 import store from './store';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-              <Route path="/" component={Layout} />
+            <Route path="/" component={Layout} />
           </div>
         </Router>
       </Provider>
