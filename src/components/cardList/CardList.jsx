@@ -5,7 +5,7 @@ import Card from './Card'
 
 class CardList extends Component {
    
-    render() {        
+    render() {
         const {cards} = this.props;
         const cardListView = cards.map((card,idx) => (
             <Card key={idx} card={card} index={idx}/>
