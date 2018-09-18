@@ -24,7 +24,7 @@
   background-position: center center;
 }
 
-.card-item{
+.card-item {
   cursor: pointer;
 }
 
@@ -80,19 +80,19 @@
 }
 
 .glow-white {
-  box-shadow: 0px 0px 30px 10px #FFFBD8;
+  box-shadow: 0px 0px 30px 10px #fffbd8;
 }
 .glow-blue {
-  box-shadow: 0px 0px 30px 10px #ACE0F9;
+  box-shadow: 0px 0px 30px 10px #ace0f9;
 }
 .glow-black {
-  box-shadow: 0px 0px 30px 10px #CCC2C0;
+  box-shadow: 0px 0px 30px 10px #ccc2c0;
 }
 .glow-red {
-  box-shadow: 0px 0px 30px 10px #F9C8C1;
+  box-shadow: 0px 0px 30px 10px #f9c8c1;
 }
 .glow-green {
-  box-shadow: 0px 0px 30px 10px #9DD2AF;
+  box-shadow: 0px 0px 30px 10px #9dd2af;
 }
 
 button.generate-button {
