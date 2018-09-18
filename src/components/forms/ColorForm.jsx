@@ -32,6 +32,7 @@ class ColorForm extends Component {
     this.props.getCards(colors);
   }
 
+
   render() {
     return (
       <div onClick={this.onChange} className="card-color-container">
