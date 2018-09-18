@@ -21,6 +21,6 @@ class CardList extends Component {
 
 const mapStateToProps = state => ({
     cards: state.cards
-})
+});
 
 export default connect(mapStateToProps, null)(CardList);
