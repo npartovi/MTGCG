@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import Card from './Card'
+import Spinner from '../shared/Spinner'
 
 class CardList extends Component {
   render() {
     const { cards, loading } = this.props
-    if (loading) return <div>LOADING</div>
+    if (loading) return <Spinner />
     const cardListView = cards.map((card, idx) => (
       <Card key={idx} card={card} index={idx} />
     ))
