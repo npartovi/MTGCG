@@ -4,8 +4,8 @@ import Card from './Card'
 
 class CardList extends Component {
   render() {
-    if (loading) return <div>JWOEFPJWEOPFJWEFOPJWEF</div>
     const { cards, loading } = this.props
+    if (loading) return <div>LOADING</div>
     const cardListView = cards.map((card, idx) => (
       <Card key={idx} card={card} index={idx} />
     ))
@@ -20,10 +20,13 @@ class CardList extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  cards: state.cards,
-  loading: state.loading.global
-})
+const mapStateToProps = state => {
+  console.log(state)
+  return {
+    cards: state.cards,
+    loading: state.loading.global
+  }
+}
 
 export default connect(
   mapStateToProps,
