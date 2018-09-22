@@ -1,7 +1,7 @@
 import {
   GET_ALL_CARDS,
   GET_CARD
-} from '../actions/filter/types'
+} from '../actions/mtgFilter/types'
 const initialState = []
 
 const cardReducer = (state = initialState, action) => {

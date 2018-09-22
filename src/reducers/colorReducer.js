@@ -1,4 +1,4 @@
-import { GET_ALL_CARDS } from '../actions/filter/types'
+import { GET_ALL_CARDS } from '../actions/mtgFilter/types'
 const initialState = ''
 
 const colorReducer = (state = initialState, action) => {

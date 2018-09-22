@@ -4,7 +4,8 @@ import Card from './Card'
 
 class CardList extends Component {
   render() {
-    const { cards } = this.props
+    if (loading) return <div>JWOEFPJWEOPFJWEFOPJWEF</div>
+    const { cards, loading } = this.props
     const cardListView = cards.map((card, idx) => (
       <Card key={idx} card={card} index={idx} />
     ))
@@ -20,7 +21,8 @@ class CardList extends Component {
 }
 
 const mapStateToProps = state => ({
-  cards: state.cards
+  cards: state.cards,
+  loading: state.loading.global
 })
 
 export default connect(

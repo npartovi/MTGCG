@@ -1,6 +1,6 @@
 import {
-  START_LOADING,
-  LOADING_SUCCESS
+  START_FETCHING,
+  FETCH_SUCCESS
 } from '../actions/loading/types'
 
 const initialState = {
@@ -11,13 +11,13 @@ const loadingReducer = (state = initialState, action) => {
   Object.freeze(state)
   let newState
   switch (action.type) {
-    case START_LOADING:
+    case START_FETCHING:
       return { ...newState, global: true }
-    case LOADING_SUCCESS:
+    case FETCH_SUCCESS:
       return { ...newState, global: false }
     default:
       return state
   }
 }
 
-export default colorReducer
+export default loadingReducer

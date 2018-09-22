@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getCards } from '../../actions/mtgFilter'
+import { getCards } from '../../actions/mtgFilter/index'
 import { connect } from 'react-redux'
 import classnames from 'classnames'
 

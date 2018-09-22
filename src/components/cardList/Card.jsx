@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getRandomCard } from '../../actions/mtgFilter'
+import { getRandomCard } from '../../actions/mtgFilter/index'
 import { connect } from 'react-redux'
 
 class Card extends Component {
