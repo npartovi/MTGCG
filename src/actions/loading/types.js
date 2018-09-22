@@ -1,0 +1,2 @@
+export const START_FETCHING = 'START_FETCHING'
+export const FETCH_SUCCESS = 'FETCH_SUCCESS'

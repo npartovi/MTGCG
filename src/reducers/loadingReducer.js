@@ -1,7 +1,7 @@
 import {
   START_LOADING,
   LOADING_SUCCESS
-} from '../actions/types'
+} from '../actions/loading/types'
 
 const initialState = {
   global: false
