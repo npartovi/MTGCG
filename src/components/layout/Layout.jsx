@@ -1,6 +1,6 @@
-import React from 'react'
-import ColorForm from '../forms/ColorForm'
-import CardList from '../cardList/CardList'
+import React from 'react';
+import ColorForm from '../forms/ColorForm';
+import CardList from '../cardList/CardList';
 
 const Layout = () => {
   return (
@@ -12,7 +12,7 @@ const Layout = () => {
         <CardList />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

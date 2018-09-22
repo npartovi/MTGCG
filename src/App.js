@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route
-} from 'react-router-dom'
-import Layout from './components/layout/Layout'
-import './App.css'
+} from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import './App.css';
 
-import store from './store'
-import { Provider } from 'react-redux'
+import store from './store';
+import { Provider } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -19,8 +19,8 @@ class App extends Component {
           </div>
         </Router>
       </Provider>
-    )
+    );
   }
 }
 
-export default App
+export default App;
