@@ -4,19 +4,24 @@ import Card from './Card'
 
 
 class CardList extends Component {
-   
+
     render() {
         const {cards} = this.props;
-        const cardListView = cards.map((card,idx) => (
-            <Card key={idx} card={card} index={idx}/>
-        ))
+        let cardsWithImg = cards.filter ((card) => card.image_uris).slice(0, 60);
+        const cardListView = cardsWithImg.map((card,idx) => {
+            if (card.image_uris) {
+                return <Card key={idx} card={card} index={idx}/>;
+            }
+        });
         return (
-            <div className="card-list-container" onClick={this.changeCard}>
+            <div className="card-list-container" >
                 {cardListView}
             </div>
         );
     }
 }
+
+
 
 
 const mapStateToProps = state => ({

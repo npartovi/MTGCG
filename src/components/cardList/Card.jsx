@@ -13,11 +13,11 @@ class Card extends Component {
   }
 
   render() {
-    const { imageUrl } = this.props.card;
+    const { small } = this.props.card.image_uris;
 
     return (
       <div className="card-item" onClick={this.changeCard}>
-        <img alt="" src={imageUrl} />
+        <img alt="" src={small} />
       </div>
     );
   }

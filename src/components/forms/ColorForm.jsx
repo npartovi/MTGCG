@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getCards } from '../../actions/mtgFilter';
+import { getRandomCards } from '../../actions/mtgFilter';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 
@@ -19,7 +19,9 @@ class ColorForm extends Component {
 
   onChange(e) {
     let currVal = this.state[e.target.getAttribute('name')];
-    this.setState({ [e.target.getAttribute('name')]: !currVal });
+    if (e.target.getAttribute('name')) {
+      this.setState({ [e.target.getAttribute('name')]: !currVal });
+    }
   }
 
   onClick(e) {
@@ -29,7 +31,8 @@ class ColorForm extends Component {
         colors.push(key);
       }
     });
-    this.props.getCards(colors);
+    console.log(this.state);
+    this.props.getRandomCards(colors);
   }
 
 
@@ -81,5 +84,5 @@ const mapStateToProps = state => ({ cards: state.cards });
 
 export default connect(
   mapStateToProps,
-  { getCards }
+  { getRandomCards }
 )(ColorForm);

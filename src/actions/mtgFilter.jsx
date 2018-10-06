@@ -5,29 +5,51 @@ import {
     GET_CARD,
 } from "./types";
 
-export const getCards = (colors) => (dispatch) => {
-    
-    
-    let colorString = colors.filter(el => el !== "null").join(",");
-    return mtg.card.where({ colors: colorString, contains: "imageUrl" })
-        .then(cards => {
-            dispatch({
-                type: GET_ALL_CARDS,
-                payload: cards, 
-                colors: colorString,
-            });
-        });
 
+const COLOR_MAP = {
+    red: 'r',
+    blue: 'u',
+    black: 'b',
+    white: 'w',
+    green: 'g'
 };
 
-export const getRandomCard = (colors, idx) => dispatch => {
+export const getRandomCards = (colors) => (dispatch) => {
+    let inColors = "";
+    colors.forEach((color) => {
+        inColors += COLOR_MAP[color];
+    });
+
+    let allColors = "grbuw";
+    let outColors = "";
+
+    allColors.split('').forEach((color) => {
+        if (!inColors.includes(color)) {
+            outColors += color;
+        }
+    });
+
+    axios.get(`https://api.scryfall.com/cards/search?unique=cards&q=color>=${inColors}&-c:${outColors}`)
+    .then((res) => {
+        dispatch({
+            type: GET_ALL_CARDS,
+            payload: res.data.data, 
+            colors: {
+                inColors,
+                outColors
+            }
+        });
+    });
+};
+
+export const getRandomCard = (colors, idx) => (dispatch) => {
     axios
-        .get(`https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&colors=${colors}`)
-        .then(res => {
+        .get(`https://api.scryfall.com/cards/random?q=color>=${colors.inColors} -c:${colors.outColors}`)
+        .then(res => { 
             dispatch({
                 type: GET_CARD,
                 payload: {
-                    card: res.data.cards[0],
+                    card: res.data,
                     idx
                 }
             });

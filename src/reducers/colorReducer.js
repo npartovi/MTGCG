@@ -1,5 +1,5 @@
 import { GET_ALL_CARDS } from '../actions/types';
-const initialState = '';
+const initialState = {};
 
 const colorReducer = (state = initialState, action) => {
   Object.freeze(state);
